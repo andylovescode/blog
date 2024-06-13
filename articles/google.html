@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sucks (Google Chat Edition)</title>
+    <script src="/core.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Google Sucks (Google Chat Edition)</h1>
+    <p>What do you expect when you delete a message?</p>
+    <p>Well according to Google, it's for attackers to be able to access it.</p>
+    <h2>The Thread</h2>
+    <a href="https://issuetracker.google.com/issues/346661915">Issue Link (locked)</a>
+    <atk-message>
+        <atk-message-author>Me</atk-message-author>
+        <pre>Summary: Viewing of other's deleted messages with Google Takeout
+
+Steps to reproduce:
+  1. Join a chat or DM with Google Chat
+  2. Have someone that is not you send and delete a message
+  3. Download the Google Takeout data
+  4. Find the directory for the chat or DM (under Google Chat/Groups/[id])
+  5. Open messages.json
+  6. The *deleted* message that is *not from you* is in messages.json
+
+Browser/OS:
+Arc 125.0.6422.142 (Official Build) (64-bit)
+Windows 11 Version 23H2 (Build 22631.3672)
+
+Attack scenario:
+Google Chat deletes messages with a delay, in compliance with the GDPR.
+Google Takeout is designed to show you your own deleted messages if they haven't been deleted yet, unfortunately, it also shows the deleted messages of others, which can be a privacy risk.
+If a user posted information they did not mean to release, and then deletes the message, even if nobody else is online to see the message, what they think is inaccessible to others is accessible to anybody currently in the group.
+
+Example attack scenario:
+* User A creates a group chat with User B
+* User B is offline, and User A posts a message with private information, and immediately deletes it.
+* User B goes online and sees the "Message deleted by its author" notice, and downloads their Google Takeout data.
+* User B reads the Google Takeout data and uses the information (that User A thought was inaccessible due to deletion) for malicious purposes.</pre>
+
+        <atk-row><a href="/images/google-01.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Google Security Bot</atk-message-author>
+        <pre>NOTE: This is an automatically generated email
+
+Hi! Many thanks for sharing your report.
+
+This email confirms we've received your message. We'll investigate the issue you've reported and get back to you once we have an update. In the meantime, you might want to take a look at the list of frequently asked questions about Google Bug Hunters.
+
+Also, if you have not already done so, create a profile on the Google Bughunters site if you'd like us to publicly recognize your contribution:
+
+Leaderboard – You'll be added here if we issue a reward for your report.
+Honorable Mentions – You'll be added here if you are not in the Hall of Fame, but we file a security vulnerability bug based on your report.
+Note that we only act on reports concerning vulnerabilities or technical security problems in one of our products. This is not the correct channel if you need to resolve a problem with your account, or want to report non-security bugs or suggest a new product feature.
+
+Cheers,
+Google Security Bot
+
+Follow us on Twitter!</pre>
+
+        <atk-row><a href="/images/google-02.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Google Security Bot</atk-message-author>
+        <pre>NOTE: This e-mail has been generated automatically.
+
+Hey,
+
+Just letting you know that your report was identified as an Abuse Risk and triaged to our Trust & Safety team.
+
+You should receive a response in a couple of days, but it might take up to a week if we're particularly busy. In the meantime, you might want to take a look at the list of frequently asked questions about Google Bug Hunters.
+
+Thanks,
+Google Security Bot</pre>
+        <atk-row><a href="/images/google-03.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Google</atk-message-author>
+        <pre>Status: Won't Fix (Intended Behavior)
+Hi,
+
+Thanks for the report! We are sorry to hear that you are having troubles with our products. Unfortunately, our team cannot help you, as we deal only with technical security vulnerability reports, and this is not one of them.
+
+To provide feedback about our products, you can also use our Google Product Forums, where you can share your feedback with other users and our product team.
+
+That said - if you think we misunderstood your report and see a well defined risk that substantially affects the confidentiality or integrity of user data or that could lead to significant harm, please let us know what we missed.
+
+Regards,
+Google Trust & Safety Team</pre>
+
+        <atk-row><a href="/images/google-04.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Me</atk-message-author>
+        <pre>I'm not sure you understand the issue, the problem is not retention of one's own messages, but rather that Google Takeout allows you to read other people's deleted messages.
+
+I don't believe it to be intended behavior for your deleted messages to be read by other people.
+
+%FIRST_NAME%</pre>
+        <atk-row><a href="/images/google-05.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Google</atk-message-author>
+        <pre>Hello,
+
+Thank you for your continued engagement on this issue. As mentioned in comment #4, this issue is not a technical security vulnerability and as such it is out of scope for our program. Please feel free to submit feedback to the product team using the link mentioned in comment #4.
+
+Best,
+Google Trust & Safety Team</pre>
+    <atk-row><a href="/images/google-06.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Google</atk-message-author>
+        <pre>Is this an automated response? In order to
+
+a. make sure you're not a bot
+b. make you realize the insanity of saying this is not an issue
+
+I request that you exactly say "Being able to see other people's deleted messages, even when no action is taken by others until after the message is deleted, and supposed to be inaccessible, is not a security flaw, and as the status says, it is intended behavior".
+
+If the exploit continues to be waved away as an intended feature, or no response is received within 2 weeks, I will a release a detailed breakdown on how to perform the exploit, that allows you to see deleted content, in a platform used used by business customers.
+
+I apologize for the passive-aggressive response, I hate writing like this, but I feel it's important to state the strangeness of considering this intended.
+
+%FIRST_NAME%</pre>
+        <atk-row><a href="/images/google-07.png">Image</a></atk-row>
+    </atk-message>
+
+    <atk-message>
+        <atk-message-author>Google</atk-message-author>
+        <pre>Hello,
+
+We appreciate your continued engagement and assure you that these reports are being reviewed by real live people. As requested in comment#7, here is your code word below:\
+
+Being able to see other people's deleted messages, even when no action is taken by others until after the message is deleted, and supposed to be inaccessible, is not a security flaw, and as the status says, it is intended behavior
+
+As noted in comment#6, unfortunately this issue does not meet the threshold for our program, though you can absolutely submit feedback to the Google Product Forums of this unexpected behavior. If possible, please provide a screen recording or video of this issue showing the conversation, the act of deleting messages, and the retrieval of the deleted message by the user at the time of using Google Takeout.
+
+Best,
+Google Trust & Safety Team</pre>
+        <atk-row><a href="/images/google-08.png">Image</a></atk-row>
+    </atk-message>
+
+    <p>I want to provide some sort of insightful commentary, but I can't, I just think this is insane.</p>
+
+    <h2>Want to create a PR nightmare for google?</h2>
+    <ul>
+        <li>Send this to your friends!</li>
+        <li>Send this to your enemies!</li>
+        <li>Send this to your favorite content creator!</li>
+        <li>Send this to your least favorite content creator!</li>
+        <li>Sit on the floor and eat a loaf of bread</li>
+    </ul>
+</body>
+</html>

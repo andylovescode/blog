@@ -1,0 +1,116 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wght,GRAD@8..144,-10..0,100..1000,-200..150&family=JetBrains Mono&display=swap';
+
+body {
+    color: white;
+    background-color: #111111;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "JetBrains Mono", monospace;
+    perspective: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: red;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+}
+
+input, button {
+    font: inherit;
+    line-height: inherit;
+}
+
+a {
+    color: black;
+    background: red;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+a:hover {
+    background: black;
+    color: white;
+}
+
+atk-message {
+    margin: 0;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition: box-shadow 0.1s;
+
+    border-radius: 5px;
+}
+
+atk-message:hover {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+atk-message > pre {
+    width: 100%;
+    text-wrap: pretty;
+}
+
+atk-message::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    background-image: url(/images/open-quote.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+atk-message::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -25px;
+    bottom: -25px;
+    transform: rotate(180deg);
+    background-image: url(/images/open-quote.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+atk-message-author {
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    color: red;
+}
+
+atk-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
+}
